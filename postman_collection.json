@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "3abcecf0-ee8c-4411-93f7-74ee1fde3c3c",
+		"name": "EventTracker Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/ping",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Good Data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Alocasia\",\n    \"description\": \"TEST\",\n    \"variegation\": true,\n    \"price\": 450.0,\n    \"rare\": true,\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Bad Price",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Alocasia\",\n    \"description\": \"TEST\",\n    \"variegation\": true,\n    \"price\": -100,\n    \"rare\": true,\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Plants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Good Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/1",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Bad Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/0",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/1000000",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"1000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Good Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Monstera\",\n    \"description\": \"Update Test\",\n    \"variegation\": true,\n    \"price\": 450.0,\n    \"rare\": true,\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/8",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Good Id Partial",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Monstera\",\n    \"description\": \"Update Test Partial\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/8",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Bad Price",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Monstera\",\n    \"description\": \"Large, fenestrated leaves\",\n    \"variegation\": true,\n    \"price\": -100.0,\n    \"rare\": true,\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/1",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Bad Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Monstera\",\n    \"description\": \"Large, fenestrated leaves\",\n    \"variegation\": true,\n    \"price\": 450.0,\n    \"rare\": true,\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/0",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Not Found",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Monstera\",\n    \"description\": \"Large, fenestrated leaves\",\n    \"variegation\": true,\n    \"price\": 450.0,\n    \"rare\": true,\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/1000000",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"1000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Good Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/7",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Bad Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/0",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Plants Not Found",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}/api/plants/1000000",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"plants",
+						"1000000"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a19bd3b7-27a7-4850-a49f-12cf966b3ffa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e348efc6-a932-4d4d-bfab-def3df52096b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "da32b885-da56-4d65-8e3a-55149e7e9dc9",
+			"key": "host",
+			"value": "localhost:8085"
+		},
+		{
+			"id": "4685fd0d-0ab6-4964-aa5a-9a422d4d748e",
+			"key": "proto",
+			"value": "http"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

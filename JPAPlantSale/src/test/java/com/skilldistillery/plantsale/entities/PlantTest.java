@@ -45,9 +45,15 @@ public class PlantTest {
 	}
 
 	@Test
-	void test_Plant_entity_mpaping() {
+	void test_Plant_entity_mapping() {
 		assertNotNull(plant);
 		assertEquals("Monstera", plant.getName());
+		assertEquals("Large, fenestrated leaves", plant.getDescription());
+		assertEquals(true, plant.getVariegation());
+		assertEquals(450.0, plant.getPrice());
+		assertEquals(true, plant.getRare());
+		assertEquals(null, plant.getImage());
+		
 	}
 
 }
