@@ -8,7 +8,8 @@ entity table in database. DB stores information on the plant's name, description
 This API server is a Spring Boot application that serves
 RESTful routes. The backend logic is fulfilled by JPA repositories. 
 All Endpoints have been tested using Postman.
-The collection is uploaded [here](./postman_collection.json).
+The collection is uploaded [here](./postman_collection.json). 
+**NOTE** IDs may need to be changed in the collection for Delete and Patch to work based on the current state of the database. 
 
 This project was helpful for learning how developers can build a REST API using 
 an ORM-style framework to serve web clients. 
