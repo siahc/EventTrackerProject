@@ -43,6 +43,7 @@ an ORM-style framework to serve web clients.
 ____
 
 ## **GET** `/api/ping`  
+URI: http://localhost:8085/api/ping
 
 #### Ping
 **GET** `/api/ping`  
@@ -53,9 +54,12 @@ pong!
 ```
 ____
 
-## **PUT** `/api/plants`  
+## **PUT** `/api/plants` 
+URI: http://localhost:8085/api/plants
 
 #### Good Data
+URI: http://localhost:8085/api/plants
+
 **PUT** `/api/plants`  
 ```json
 {
@@ -84,6 +88,8 @@ response body:
 ```
 
 #### Bad Price
+URI: http://localhost:8085/api/plants
+
 **PUT** `/api/plants`  
 ```json
 {
@@ -101,6 +107,8 @@ ____
 ## **GET** `/api/plants`  
 
 #### List Plants
+URI: http://localhost:8085/api/plants
+
 **GET** `/api/plants`  
 200 OK  
 ```json
@@ -157,6 +165,8 @@ ____
 ## **GET** `/api/plants/{id}`  
 
 #### Good Id
+URI: http://localhost:8085/api/plants/1
+
 **GET** `/api/plants/1`  
 200 OK  
 ```json
@@ -172,10 +182,14 @@ ____
 ```
 
 #### Bad Id
+URI: http://localhost:8085/api/plants/0
+
 **GET** `/api/plants/0`  
 400 Bad Request  
 
 #### Not Found
+URI: http://localhost:8085/api/plants1000000
+
 **GET** `/api/plants/1000000`  
 404 Not Found  
 ____
@@ -183,6 +197,8 @@ ____
 ## **PATCH** `/api/plants/{id}`  
 
 #### Good Id
+URI: http://localhost:8085/api/plants/8
+
 **PATCH** `/api/plants/8`  
 ```json
 {
@@ -208,6 +224,8 @@ ____
 ```
 
 #### Good Id Partial
+URI: http://localhost:8085/api/plants/8
+
 **PATCH** `/api/plants/8`  
 ```json
 {
@@ -229,28 +247,40 @@ ____
 ```
 
 #### Bad Price
+URI: http://localhost:8085/api/plants/1
+
 **PATCH** `/api/plants/1`  
 400 Bad Request  
 
 #### Bad Id
+URI: http://localhost:8085/api/plants/0
+
 **PATCH** `/api/plants/0`  
 404 Not Found  
 
 #### Not Found
+URI: http://localhost:8085/api/plants/1000000
+
 **PATCH** `/api/plants/1000000`  
 404 Not Found  
 ____
 
-## **DELETE** `/api/plants/{id}`  
+## **DELETE** `/api/plants/{id}` 
 
 #### Good Id
+URI: http://localhost:8085/api/plants/13
+
 **DELETE** `/api/plants/13`  
 204 No Content  
 
 #### Bad Id
+URI: http://localhost:8085/api/plants/0
+
 **DELETE** `/api/plants/0`  
 400 Bad Request  
 
 #### Not Found
+URI: http://localhost:8085/api/plants/1000000
+
 **DELETE** `/api/plants/1000000`  
 404 Not Found  
