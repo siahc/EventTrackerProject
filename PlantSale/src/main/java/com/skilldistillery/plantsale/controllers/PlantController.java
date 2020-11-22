@@ -62,6 +62,10 @@ public class PlantController {
 			response.setStatus(400);
 			return null;
 		}
+		if(plant.getPrice() != null && plant.getPrice().isNaN()) {
+			response.setStatus(400);
+			return null;
+		}
 		if(plant.getPrice() != null && plant.getPrice() < 0) {
 			response.setStatus(400);
 			return null;
