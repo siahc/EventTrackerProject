@@ -9,10 +9,38 @@
   <body>
     <h1>Plant Sale</h1>
     <h2>cool</h2>
+
+
     <table id="plantList"></table>
     <p>
       Inventory Value:
       <span id="inventoryValue"> 0 </span>
     </p>
+    <button onclick='toggleCreateForm()'>Add Plant
+    </button>
+    <div id='createFormDiv'>
+        <form id='createForm' onsubmit='createPlant(); return false;'>
+            <label for='name'>name:</label>
+            <input type='text' id='create_name' name='name'></input>
+            <br>
+            <label for='description'>description:</label>
+            <input type='text' id='create_description' name='description'></input>
+            <br>
+            <label for='price'>price:</label>
+            <input type='text' id='create_price' name='price'></input>
+            <br>
+            <label for='rare'>rare:</label>
+            <input type='checkbox' id='create_rare' name='rare'></input>
+            <br>
+            <label for='variegation'>variegation:</label>
+            <input type='checkbox' id='create_variegation' name='variegation'></input>
+            <br>
+            <label for='image'>image:</label>
+            <input type='text' id='create_image' name='image'></input>
+            <br>
+            <button>Submit</button>
+            <span id='create_status'></span>
+        </form>
+    </div>
   </body>
 </html>

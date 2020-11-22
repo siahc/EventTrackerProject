@@ -7,6 +7,7 @@ window.addEventListener('load', function(){
 function init() {
 	console.log('in init() still ');
 		//TODO: set up event listeners for buttons etc.
+	toggleCreateForm();
 	listPlants();
 }
 
@@ -32,6 +33,7 @@ function listPlants(){
 
 function displayPlantList(list){
 	table = document.createElement('table')
+	table.id = 'plantList'
 	keys = ['id', 'name','description', 'price', 'rare', 'variegation', 'image' ]
 
 	let tr = document.createElement('tr');
@@ -61,7 +63,7 @@ function displayPlantList(list){
 
 
 	let plTable = document.getElementById('plantList');
-	plTable.replaceWith(table)
+	plTable.replaceWith(table )
 }
 
 
@@ -71,4 +73,58 @@ function displayInventoryValue(list) {
 		total += plant.price;
 	}
 	document.getElementById('inventoryValue').textContent = total;
+}
+
+// https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+function toggleCreateForm() {
+	let form = document.getElementById('createFormDiv');
+	if (form.style.display === 'none') {
+		form.style.display = 'block';
+	} else {
+		form.style.display = 'none';
+	}
+}
+
+function createPlant(){
+	let price = parseFloat(document.getElementById('create_price').value)
+	price = Math.round(price * 100) /100
+	let plant = {
+		"name": document.getElementById('create_name').value,
+		"description": document.getElementById('create_description').value,
+		"price": price,
+		"rare": document.getElementById('create_rare').checked,
+		"variegation": document.getElementById('create_variegation').checked,
+		"image": document.getElementById('create_image').value,
+	}
+	console.log(plant)
+	console.log(JSON.stringify(plant))
+
+	let status = document.getElementById('create_status')
+	// Validate the form client side
+	if (Number.isNaN(plant.price)) {
+		status.textContent = "form error:  Price is not a number"
+		return
+	}
+
+	// Send Create Request
+	let xhr = new XMLHttpRequest()
+	xhr.open('PUT','/api/plants')
+	xhr.setRequestHeader('Content-Type', 'application/json')
+
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState === 4) {
+			if (xhr.status === 201) {
+				let newPlant = JSON.parse(xhr.responseText)
+				status.textContent = 'created plant id: '+newPlant.id
+				listPlants()
+			} else if (xhr.status === 400){
+				status.textContent = 'bad request, Please make sure price is non-negative'
+			} else {
+				status.textContent = 'Error: ' + xhr.status
+			}
+		}
+	}
+
+	status.textContent = '...'
+	xhr.send(JSON.stringify(plant))
 }
