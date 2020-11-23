@@ -165,21 +165,21 @@ function deletePlant() {
   // on success print and then show table
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
-		if ( xhr.status === 204) {
-			window.location = "";
-  hide("updateFormDiv");
-  listPlants();
-		} else if ( xhr.status === 404) {
-			status.textContent = "Error: Not Found"
-		} else if ( xhr.status === 400) {
-			status.textContent = "Bad Id"
-		} else {
-			status.textContent = "Error: " + xhr.status;
-		}
+      if (xhr.status === 204) {
+        window.location = "";
+        hide("updateFormDiv");
+        listPlants();
+      } else if (xhr.status === 404) {
+        status.textContent = "Error: Not Found";
+      } else if (xhr.status === 400) {
+        status.textContent = "Bad Id";
+      } else {
+        status.textContent = "Error: " + xhr.status;
+      }
     }
   };
-  
-  xhr.send()
+
+  xhr.send();
 }
 
 function displayInventoryValue(list) {
