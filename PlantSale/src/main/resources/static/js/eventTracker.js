@@ -4,8 +4,6 @@ window.addEventListener("load", function () {
 });
 
 function init() {
-  console.log("in init() still ");
-  //TODO: set up event listeners for buttons etc.
   hide("updateFormDiv");
   hide("createFormDiv");
   listPlants();
