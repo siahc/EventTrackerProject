@@ -4,10 +4,24 @@ window.addEventListener("load", function () {
 });
 
 function init() {
-  hide("updateFormDiv");
   hide("createFormDiv");
-  listPlants();
+
+  route()
 }
+
+// if the window's route changes, hide or show the proper elements
+function route() {
+  console.log("Route changed", location.hash)
+  if (location.hash == "" || location.hash == "#") {
+    hide("updateFormDiv")
+    listPlants()
+  } else {
+    id = location.hash.replace("#plant-", "")
+    showUpdateForm(id)
+  }
+}
+window.onhashchange = route
+
 
 function listPlants() {
   let xhr = new XMLHttpRequest();
@@ -44,7 +58,7 @@ function displayPlantList(list) {
     let tr = document.createElement("tr");
 
     tr.onclick = function (e) {
-      showUpdateForm(plant.id);
+      location.hash = "plant-" + plant.id;
     };
 
     // loop through keys
@@ -86,7 +100,6 @@ function showUpdateForm(id) {
         document.getElementById("update_variegation").checked =
           plant.variegation;
         document.getElementById("update_image").value = plant.image;
-        window.location = "#" + id; // TODO: back button still not working in update form
         hide("plantList");
         show("updateFormDiv");
       } else {
@@ -136,8 +149,6 @@ function updatePlant() {
       if (xhr.status === 200) {
         // on success print and then show table
         window.location = "";
-        hide("updateFormDiv");
-        listPlants();
       } else if (xhr.status === 400) {
         status.textContent =
           "Bad request; Please make sure price is non-negative";
@@ -165,8 +176,6 @@ function deletePlant() {
     if (xhr.readyState === 4) {
       if (xhr.status === 204) {
         window.location = "";
-        hide("updateFormDiv");
-        listPlants();
       } else if (xhr.status === 404) {
         status.textContent = "Error: Not Found";
       } else if (xhr.status === 400) {
