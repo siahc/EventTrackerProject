@@ -1,9 +1,17 @@
 # EventTrackerProject
 
-## **🌿 Plant Sale 🌴** API Documentation
-
 Welcome to the sale tracker. User may perform full list and CRUD functions on plant 
 entity table in database. DB stores information on the plant's name, description, and other key qualities that plant buyers need for purchasing decisions. 
+
+## **🌿 Plant Sale 🌴** UI Documentation
+
+User is able to use single-page the web app to easily interact with the plant inventory. All plants are listing in a table. Rows have a hover effect. User is able to click on an individual item and have the item displayed with its complete details. From this page, user is given the option to edit or delete a plant listing. 
+
+Inventory value via data aggregation is updated on the home page so user may see tge total amount the plant seller's inventory is valued. 
+Received help with learning about and implementing a router so links and navigation (forward/back) would work properly. 
+
+This project provided increased experience with Javascript events and function handlers, xhr, form validation, Data aggregation, DOM manipulation and user experience.
+## **🌿 Plant Sale 🌴** API Documentation
 
 This API server is a Spring Boot application that serves
 RESTful routes. The backend logic is fulfilled by JPA repositories. 
