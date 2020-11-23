@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <title>Plant Sale</title>
     <script type="text/javascript" src="js/eventTracker.js"></script>
+    <style type="text/css">
+        tr:hover {
+          background-color: #ffff99;
+        }
+    </style>
   </head>
 
   <body>
@@ -18,6 +23,7 @@
         <input type='text' id='update_name' name='name' value='My cool Philodendron'></input>
         <br>
         <label for='description'>description:</label>
+        <br>
         <textarea id='update_description' name='description' value='has leaves that are green and white :)'></textarea>
         <br>
         <label for='price'>price:</label>
@@ -32,7 +38,7 @@
         <label for='image'>image:</label>
         <input type='text' id='update_image' name='image' value=''></input>
         <br>
-        <button>Submit</button>
+        <button>Update</button>
         <span id='update_status'></span>
       </form>
       <br>
@@ -53,6 +59,7 @@
             <input type='text' id='create_name' name='name'></input>
             <br>
             <label for='description'>description:</label>
+            <br>
             <textarea id='create_description' name='description'></textarea>
             <br>
             <label for='price'>price:</label>
@@ -67,9 +74,10 @@
             <label for='image'>image:</label>
             <input type='text' id='create_image' name='image'></input>
             <br>
-            <button>Submit</button>
+            <button>Create</button>
             <span id='create_status'></span>
         </form>
     </div>
+    <h4> Click on any of the plants to update or delete</h4>
   </body>
 </html>
