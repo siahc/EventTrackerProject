@@ -30,6 +30,24 @@ export class PlantsService {
     );
   }
 
+  create(plant: Plant): Observable<Plant> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+    return this.http
+      .put<Plant>(this.baseUrl + '/api/plants/', JSON.stringify(plant), {
+        headers: headers,
+      })
+      .pipe(
+        catchError((err: any) => {
+          console.log(err);
+          return throwError('Plant Service create() Failed: ' + err.status + ' ' + err.statusText);
+        })
+      )
+
+  }
+
   update(plant: Plant): Observable<ArrayBuffer> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

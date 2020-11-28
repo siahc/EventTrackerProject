@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlantListComponent } from './components/plant-list/plant-list.component';
 import { PlantDetailComponent } from './components/plant-detail/plant-detail.component';
+import { PlantCreateComponent } from './components/plant-create/plant-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlantListComponent,
-    PlantDetailComponent
+    PlantDetailComponent,
+    PlantCreateComponent
   ],
   imports: [
     BrowserModule,

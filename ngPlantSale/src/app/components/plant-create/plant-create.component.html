@@ -1,0 +1,28 @@
+<h1>Add a Plant</h1>
+
+<a routerLink=''>Home</a>
+
+
+<form>
+  <label for='name'>name:</label>
+  <input type='text' name='name' [(ngModel)]='plant.name'/>
+  <br>
+  <label for='description'>description:</label><br>
+  <textarea name='description' [(ngModel)]='plant.description'></textarea>
+  <br>
+  <label for='price'>price:</label>
+  <input type='text' name='price' [(ngModel)]='plant.price'/>
+  <br>
+  <label for='rare'>rare:</label>
+  <input type='checkbox' name='rare' [(ngModel)]='plant.rare'/>
+  <br>
+  <label for='variegation'>variegation:</label>
+  <input type='checkbox' name='variegation' [(ngModel)]='plant.variegation'/>
+  <br>
+  <label for='image'>image:</label>
+  <input type='text' name='image' [(ngModel)]='plant.image'/>
+  <br>
+  <button (click)='createPlant()'>Add Plant</button>
+  <br>
+  <p *ngIf='status'>{{status}}</p>
+</form>
