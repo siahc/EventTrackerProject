@@ -16,7 +16,7 @@ export class PlantsService {
     return this.http.get<Plant[]>(this.baseUrl + '/api/plants').pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Plant Service list() Failed');
+        return throwError('Plant Service list() Failed: ' + err.status + ' ' + err.statusText);
       })
     );
   }
@@ -25,7 +25,7 @@ export class PlantsService {
     return this.http.get<Plant>(this.baseUrl + '/api/plants/' + id).pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Plant Service get() Failed');
+        return throwError('Plant Service get() Failed: ' + err.status + ' ' + err.statusText);
       })
     );
   }
@@ -42,7 +42,7 @@ export class PlantsService {
       .pipe(
         catchError((err: any) => {
           console.log(err);
-          return throwError('Plant Service get() Failed');
+          return throwError('Plant Service get() Failed: ' + err.status + ' ' + err.statusText);
         })
       );
   }
@@ -51,10 +51,10 @@ export class PlantsService {
     return this.http.delete<Plant>(this.baseUrl + '/api/plants/' + id).pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Plant Service get() Failed');
+        return throwError('Plant Service get() Failed: ' + err.status + ' ' + err.statusText);
       })
     );
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, ) {}
 }
