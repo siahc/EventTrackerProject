@@ -1,0 +1,33 @@
+<p>plant-detail works! {{id}}</p>
+
+<a routerLink=''>Home</a>
+
+<form>
+  <label for='id'>id:</label>
+  <input type='text' name='id' [(ngModel)]='id' disabled/>
+  <br>
+  <label for='name'>name:</label>
+  <input type='text' name='name' [(ngModel)]='plant.name'/>
+  <br>
+  <label for='description'>description:</label><br>
+  <textarea name='description' [(ngModel)]='plant.description'></textarea>
+  <br>
+  <label for='price'>price:</label>
+  <input type='text' name='price' [(ngModel)]='plant.price'/>
+  <br>
+  <label for='rare'>rare:</label>
+  <input type='checkbox' name='rare' [(ngModel)]='plant.rare'/>
+  <br>
+  <label for='variegation'>variegation:</label>
+  <input type='checkbox' name='variegation' [(ngModel)]='plant.variegation'/>
+  <br>
+  <label for='image'>image:</label>
+  <input type='text' name='image' [(ngModel)]='plant.image'/>
+  <br>
+  <button (click)='updatePlant()'>Update</button>
+  <span></span>
+</form>
+
+<br>
+<button (click)='deletePlant();'> 🗑 Delete this Plant ⚠ </button>
+<span></span>

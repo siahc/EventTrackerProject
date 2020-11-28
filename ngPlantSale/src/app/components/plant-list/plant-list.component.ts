@@ -34,4 +34,8 @@ export class PlantListComponent implements OnInit {
     )
   }
 
+  rowClick(id: number): void {
+    window.location.href = "/plant/" + id
+  }
+
 }

@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of plants">
+    <tr *ngFor="let p of plants" (click)='rowClick(p.id)'>
       <td>{{p.id}}</td>
       <td>{{p.name}}</td>
       <td>{{p.description}}</td>
