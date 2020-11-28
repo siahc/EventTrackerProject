@@ -1,1 +1,30 @@
 <p>plant-list works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>description</td>
+      <td>variegation</td>
+      <td>price</td>
+      <td>rare</td>
+      <td>image</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of plants">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.description}}</td>
+      <td>{{p.variegation}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.rare}}</td>
+      <td>
+        <img [src]="p.image"/>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>
