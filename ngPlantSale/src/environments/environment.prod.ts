@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://example.com/'
+  apiUrl: '',
+  // apiUrl: 'http://api.example.com'  # example of API on another host
 };

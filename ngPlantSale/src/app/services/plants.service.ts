@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+import { environment } from './../../environments/environment';
 import { Plant } from '../models/plant';
 
 
@@ -10,7 +11,7 @@ import { Plant } from '../models/plant';
   providedIn: 'root'
 })
 export class PlantsService {
-  private baseUrl = '';
+  private baseUrl = environment.apiUrl || '';
 
   list(): Observable<Plant[]> {
     return this.http.get<Plant[]>(this.baseUrl + '/api/plants').pipe(
