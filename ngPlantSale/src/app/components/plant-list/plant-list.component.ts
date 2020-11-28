@@ -10,7 +10,7 @@ import { Plant } from './../../models/plant';
 })
 export class PlantListComponent implements OnInit {
 
-  private plants: Plant[] = [];
+  plants: Plant[] = [];
 
   constructor(private plantSvc: PlantsService) { }
 
