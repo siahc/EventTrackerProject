@@ -2,18 +2,18 @@ export class Plant {
   id: string;
   name: string;
   description: string;
-  variegation: string;
-  price: string;
-  rare: string;
+  variegation: boolean;
+  price: number;
+  rare: boolean;
   image: string;
 
   constructor(
     id?: string,
     name?: string,
     description?: string,
-    variegation?: string,
-    price?: string,
-    rare?: string,
+    variegation?: boolean,
+    price?: number,
+    rare?: boolean,
     image?: string
   ) {
     this.id = id;
