@@ -12,20 +12,24 @@ export class PlantListComponent implements OnInit {
 
   plants: Plant[] = [];
   error: string = '';
+  totalValue: number = 0;
 
   constructor(private plantSvc: PlantsService) { }
 
   ngOnInit(): void {
     this.listPlants();
   }
-
   listPlants(): void{
     this.plantSvc.list().subscribe(
       data => {
         this.plants = data;
         this.error = '';
         console.log('listPlants() Loaded');
-
+        // ** data aggregation **
+        this.totalValue = 0;
+        for (let p of data) {
+          this.totalValue += p.price
+        }
       },
       err => {
         this.error = err;
