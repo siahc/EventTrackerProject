@@ -12,11 +12,11 @@ import { Plant } from '../models/plant';
 export class PlantsService {
   private baseUrl = '';
 
-  index(): Observable<Plant[]> {
+  list(): Observable<Plant[]> {
     return this.http.get<Plant[]>(this.baseUrl + '/api/plants').pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Plant Service Index Failed');
+        return throwError('Plant Service list() Failed');
       })
     )
   }

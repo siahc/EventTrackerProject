@@ -28,6 +28,9 @@
         <img [src]="p.image"/>
       </td>
     </tr>
+    <tr *ngIf="error">
+      <td rowspan='7'>{{error}}</td>
+    </tr>
 
   </tbody>
 

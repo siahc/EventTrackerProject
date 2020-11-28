@@ -11,6 +11,7 @@ import { Plant } from './../../models/plant';
 export class PlantListComponent implements OnInit {
 
   plants: Plant[] = [];
+  error: string = '';
 
   constructor(private plantSvc: PlantsService) { }
 
@@ -19,13 +20,15 @@ export class PlantListComponent implements OnInit {
   }
 
   listPlants(): void{
-    this.plantSvc.index().subscribe(
+    this.plantSvc.list().subscribe(
       data => {
         this.plants = data;
+        this.error = '';
         console.log('listPlants() Loaded');
 
       },
       err => {
+        this.error = err;
         console.error('List Plants',err);
       }
     )
