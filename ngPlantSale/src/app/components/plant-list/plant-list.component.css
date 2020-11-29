@@ -1,9 +1,9 @@
-tr:hover {
-  background-color: bisque;
-}
-
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: bisque;
 }
 
 img {
