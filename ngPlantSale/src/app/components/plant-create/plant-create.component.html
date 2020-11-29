@@ -1,6 +1,6 @@
 <h1>Add a Plant</h1>
 
-<a routerLink=''>Home</a>
+<a routerLink='' class="btn btn-secondary">Home</a>
 
 
 <form>
@@ -22,7 +22,7 @@
   <label for='image'>image:</label>
   <input type='text' name='image' [(ngModel)]='plant.image'/>
   <br>
-  <button (click)='createPlant()'>Add Plant</button>
+  <button class="btn btn-primary" (click)='createPlant()'>Add Plant</button>
   <br>
   <p *ngIf='status'>{{status}}</p>
 </form>

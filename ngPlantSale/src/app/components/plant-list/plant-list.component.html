@@ -1,23 +1,26 @@
-<p>plant-list works!</p>
+<h3>
+  Plant Shop
+  <small class="text-muted">Find your quarantine friend</small>
+</h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <td>id</td>
-      <td>name</td>
-      <td>description</td>
-      <td>price</td>
-      <td>variegation</td>
-      <td>rare</td>
-      <td>image</td>
+      <th>id</th>
+      <th>name</th>
+      <th>description</th>
+      <th>price</th>
+      <th>variegation</th>
+      <th>rare</th>
+      <th>image</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of plants" (click)='rowClick(p.id)'>
-      <td>{{p.id}}</td>
-      <td>{{p.name}}</td>
-      <td>{{p.description}}</td>
-      <td>{{p.price}}</td>
+    <tr *ngFor="let p of plants" (click)="rowClick(p.id)">
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.description }}</td>
+      <td>{{ p.price }}</td>
       <td>
         <span *ngIf="p.variegation">🔲</span>
       </td>
@@ -29,12 +32,12 @@
       </td>
     </tr>
     <tr *ngIf="error">
-      <td rowspan='7'>{{error}}</td>
+      <td rowspan="7">{{ error }}</td>
     </tr>
-
   </tbody>
-
 </table>
-<p *ngIf='!error'>Total inventory value: ${{totalValue}}</p>
+<p class="text-primary" *ngIf="!error">
+  Total inventory value: ${{ totalValue }}
+</p>
 
-<a routerLink="create">Add a Plant</a>
+<a class="btn btn-primary" routerLink="create">Add a Plant</a>

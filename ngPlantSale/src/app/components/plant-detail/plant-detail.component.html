@@ -1,6 +1,6 @@
 <p>plant-detail works! {{id}}</p>
 
-<a routerLink=''>Home</a>
+<a routerLink='' class="btn btn-secondary">Home</a>
 
 <p *ngIf='error'>{{error}}</p>
 
@@ -25,11 +25,12 @@
   <br>
   <label for='image'>image:</label>
   <input type='text' name='image' [(ngModel)]='plant.image'/>
+  <img [src]='plant.image'/>
   <br>
-  <button (click)='updatePlant()'>Update</button>
+  <button class="btn btn-primary" (click)='updatePlant()'>Update</button>
   <span></span>
 </form>
 
 <br>
-<button (click)='deletePlant();'> 🗑 Delete this Plant ⚠ </button>
+<button class="btn btn-danger" (click)='deletePlant();'> 🗑 Delete this Plant ⚠ </button>
 <span></span>
