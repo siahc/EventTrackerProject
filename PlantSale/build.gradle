@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	compile project (':JPAPlantSale')
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'

@@ -1,3 +1,4 @@
+import { Router, RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { PlantsService } from './../../services/plants.service';
@@ -14,7 +15,7 @@ export class PlantListComponent implements OnInit {
   error: string = '';
   totalValue: number = 0;
 
-  constructor(private plantSvc: PlantsService) { }
+  constructor(private plantSvc: PlantsService, private router: Router) { }
 
   ngOnInit(): void {
     this.listPlants();
@@ -39,7 +40,7 @@ export class PlantListComponent implements OnInit {
   }
 
   rowClick(id: number): void {
-    window.location.href = "/plant/" + id
+    this.router.navigateByUrl( "plant/" + id);
   }
 
 }
