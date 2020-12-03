@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Plant Sale</title>
+    <script type="text/javascript" src="js/eventTracker.js"></script>
+    <style type="text/css">
+        tr:hover {
+          background-color: #ffff99;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>Plant Sale</h1>
+
+    <div id="updateFormDiv">
+      <form id='updateForm' onsubmit='updatePlant(); return false;'>
+        <label for='id'>id:</label>
+        <input type='text' id='update_id' name='id' value='1' disabled></input>
+        <br>
+        <label for='name'>name:</label>
+        <input type='text' id='update_name' name='name' value='My cool Philodendron'></input>
+        <br>
+        <label for='description'>description:</label>
+        <br>
+        <textarea id='update_description' name='description' value='has leaves that are green and white :)'></textarea>
+        <br>
+        <label for='price'>price:</label>
+        <input type='text' id='update_price' name='price' value='450.00'></input>
+        <br>
+        <label for='rare'>rare:</label>
+        <input type='checkbox' id='update_rare' name='rare' checked></input>
+        <br>
+        <label for='variegation'>variegation:</label>
+        <input type='checkbox' id='update_variegation' name='variegation' value=''></input>
+        <br>
+        <label for='image'>image:</label>
+        <input type='text' id='update_image' name='image' value=''></input>
+        <br>
+        <button>Update</button>
+        <span id='update_status'></span>
+      </form>
+      <br>
+      <button onclick='deletePlant();'> 🗑 Delete this Plant ⚠ </button>
+      <span id='delete_status'></span>
+    </div>
+
+    <table id="plantList"></table>
+    <p>
+      Inventory Value:
+      <span id="inventoryValue"> 0 </span>
+    </p>
+    <button onclick='toggleHide("createFormDiv")'>Add Plant
+    </button>
+    <div id='createFormDiv'>
+        <form id='createForm' onsubmit='createPlant(); return false;'>
+            <label for='name'>name:</label>
+            <input type='text' id='create_name' name='name'></input>
+            <br>
+            <label for='description'>description:</label>
+            <br>
+            <textarea id='create_description' name='description'></textarea>
+            <br>
+            <label for='price'>price:</label>
+            <input type='text' id='create_price' name='price'></input>
+            <br>
+            <label for='rare'>rare:</label>
+            <input type='checkbox' id='create_rare' name='rare'></input>
+            <br>
+            <label for='variegation'>variegation:</label>
+            <input type='checkbox' id='create_variegation' name='variegation'></input>
+            <br>
+            <label for='image'>image:</label>
+            <input type='text' id='create_image' name='image'></input>
+            <br>
+            <button>Create</button>
+            <span id='create_status'></span>
+        </form>
+    </div>
+    <h4> Click on any of the plants to update or delete</h4>
+  </body>
+</html>
