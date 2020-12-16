@@ -1,5 +1,5 @@
 # EventTrackerProject
-
+http://3.20.44.239:8080/PlantSale/#/
 
 
 Welcome to the sale tracker. User may perform full list and CRUD functions on plant 
